@@ -1,5 +1,6 @@
 import { Crimson_Text, Montserrat } from 'next/font/google';
 import './globals.css';
+import Header from '@/components/Header';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -21,9 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' className='h-full'>
       <body
-        className={`${montserrat.variable} ${crimsonText.variable} min-h-full font-sans`}
+        className={`${montserrat.variable} ${crimsonText.variable} min-h-full font-sans bg-slate-100 flex flex-col`}
       >
-        {children}
+        <Header />
+        <main className='flex-1 mx-auto'>{children}</main>
       </body>
     </html>
   );
