@@ -8,8 +8,9 @@ const Header = () => {
         <div className='flex-1 font-serif uppercase text-2xl'>
           <Link href='/'>Weapon Shop</Link>
         </div>
-        <nav>
+        <nav className='flex gap-x-2 | md:gap-x-5'>
           <Link href='/'>Home</Link>
+          <Link href='/shop'>Shop</Link>
         </nav>
       </div>
     </header>
