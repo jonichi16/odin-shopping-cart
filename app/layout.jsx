@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' className='h-full'>
       <body
-        className={`${montserrat.variable} ${crimsonText.variable} min-h-full font-sans bg-slate-100 flex flex-col`}
+        className={`${montserrat.variable} ${crimsonText.variable} min-h-full font-sans bg-slate-200 flex flex-col`}
       >
         <Header />
         {children}
