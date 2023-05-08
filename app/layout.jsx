@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.variable} ${crimsonText.variable} min-h-full font-sans bg-slate-100 flex flex-col`}
       >
         <Header />
-        <main className='flex-1 mx-auto'>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
