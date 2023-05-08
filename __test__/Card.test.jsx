@@ -4,18 +4,20 @@ import '@testing-library/user-event';
 import Card from '../components/Card';
 
 describe('Card component', () => {
-  const product = jest.fn({
+  const product = {
     id: 1,
+    image: {
+      src: '/test.png',
+      width: 250,
+      height: 250,
+    },
     name: 'Sample Item',
-    image: 'sample image',
     price: 1200,
-  });
+  };
 
-  it('render a name of the item', () => {
-    render(<Card product={product} />);
+  it('renders the correct component', () => {
+    const { container } = render(<Card product={product} />);
 
-    const heading = screen.getByRole('heading');
-
-    expect(heading).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });
