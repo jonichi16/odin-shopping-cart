@@ -1,13 +1,13 @@
-import busterSword from '../assets/images/buster-sword.png';
-import ironBlade from '../assets/images/iron-blade.png';
-import gatlingGun from '../assets/images/gatling-gun.png';
-import lightMachineGun from '../assets/images/light-machine-gun.png';
-import leatherGloves from '../assets/images/leather-gloves.png';
-import metalKnuckles from '../assets/images/metal-knuckles.png';
-import guardStick from '../assets/images/guard-stick.png';
-import arcaneScepter from '../assets/images/arcane-scepter.png';
-import fourPointShuriken from '../assets/images/4-point-shuriken.png';
-import boomerang from '../assets/images/boomerang.png';
+import busterSword from '../../../assets/images/buster-sword.png';
+import ironBlade from '../../../assets/images/iron-blade.png';
+import gatlingGun from '../../../assets/images/gatling-gun.png';
+import lightMachineGun from '../../../assets/images/light-machine-gun.png';
+import leatherGloves from '../../../assets/images/leather-gloves.png';
+import metalKnuckles from '../../../assets/images/metal-knuckles.png';
+import guardStick from '../../../assets/images/guard-stick.png';
+import arcaneScepter from '../../../assets/images/arcane-scepter.png';
+import fourPointShuriken from '../../../assets/images/4-point-shuriken.png';
+import boomerang from '../../../assets/images/boomerang.png';
 
 const Products = [
   {
