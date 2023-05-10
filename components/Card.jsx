@@ -12,8 +12,7 @@ const Card = ({ product }) => {
         'Content-Type': 'application/json',
       },
     });
-    const data = await response.json();
-    console.log(data);
+    await response.json();
   };
 
   return (
