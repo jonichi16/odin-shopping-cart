@@ -1,19 +1,15 @@
-import React from 'react';
+import React, { use } from 'react';
 import Card from '@/components/Card';
 
 async function fetchProducts() {
-  const response = await fetch('http://localhost:3000/api/products', {
-    next: {
-      revalidate: 60,
-    },
-  });
+  const response = await fetch('http://localhost:3000/api/products');
   const products = await response.json();
 
   return products;
 }
 
-const ShopPage = async () => {
-  const products = await fetchProducts();
+const ShopPage = () => {
+  const products = use(fetchProducts());
 
   return (
     <main className='flex-1'>
