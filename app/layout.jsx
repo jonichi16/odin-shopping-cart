@@ -1,18 +1,8 @@
-import { Crimson_Text, Montserrat } from 'next/font/google';
+import { montserrat, crimsonText } from '@/utils/font';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-});
-
-const crimsonText = Crimson_Text({
-  weight: ['700'],
-  subsets: ['latin'],
-  variable: '--font-crimson-text',
-});
+import CartProvider from '../components/CartProvider';
 
 export const metadata = {
   title: 'Shopping Cart',
@@ -23,11 +13,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' className='h-full'>
       <body
-        className={`${montserrat.variable} ${crimsonText.variable} min-h-full font-sans bg-slate-200 flex flex-col`}
+        className={`${montserrat.variable} ${crimsonText.variable} min-h-full font-sans bg-slate-200 flex flex-col text-slate-950`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
