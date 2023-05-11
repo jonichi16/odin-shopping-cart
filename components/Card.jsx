@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import AddToCartButton from './AddToCartButton';
+import { priceFormatter } from '@/utils/price';
 
 const Card = ({ product }) => {
   return (
@@ -17,7 +18,7 @@ const Card = ({ product }) => {
         <h2 className='text-lg font-bold pb-2'>{product.name}</h2>
         <div className='flex items-center'>
           <p className='text-red-500 text-sm font-bold flex-1'>
-            {product.price} Gil
+            {priceFormatter(product.price)} Gil
           </p>
           <AddToCartButton product={product} />
         </div>

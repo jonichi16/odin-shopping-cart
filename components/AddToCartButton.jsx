@@ -4,12 +4,34 @@ import React from 'react';
 import { useCart } from './CartProvider';
 
 const AddToCartButton = ({ product }) => {
-  const { setCart } = useCart();
+  const { cart, setCart } = useCart();
 
   const handleClick = (e) => {
     e.preventDefault();
 
-    setCart((prev) => [...prev, product]);
+    const { id, name, price, image } = product;
+
+    const index = cart.findIndex((item) => item.name === name);
+
+    if (index !== -1) {
+      const updatedItem = {
+        ...cart[index],
+        qty: cart[index].qty + 1,
+      };
+      const updatedCart = [...cart];
+      updatedCart[index] = updatedItem;
+      setCart(updatedCart);
+    } else {
+      const newItem = {
+        id: Date.now(),
+        itemId: id,
+        name,
+        price,
+        image,
+        qty: 1,
+      };
+      setCart((prev) => [...prev, newItem]);
+    }
   };
 
   return (
