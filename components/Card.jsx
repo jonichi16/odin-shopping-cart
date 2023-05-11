@@ -1,20 +1,8 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
+import AddToCartButton from './AddToCartButton';
 
 const Card = ({ product }) => {
-  const handleClick = async () => {
-    const response = await fetch('http://localhost:3000/api/cart', {
-      method: 'POST',
-      body: JSON.stringify(product),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    await response.json();
-  };
-
   return (
     <div className='bg-slate-50 w-fit rounded-md shadow'>
       <Image
@@ -31,12 +19,7 @@ const Card = ({ product }) => {
           <p className='text-red-500 text-sm font-bold flex-1'>
             {product.price} Gil
           </p>
-          <button
-            className='bg-blue-800 text-slate-50 py-1 px-5 uppercase font-bold text-sm rounded-full hover:opacity-90 active:scale-95'
-            onClick={handleClick}
-          >
-            Add to Cart
-          </button>
+          <AddToCartButton product={product} />
         </div>
       </div>
     </div>
