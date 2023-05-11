@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: 'standalone',
   basePath: '/odin-shopping-cart',
-  pageExtensions: ['js', 'jsx'],
-  // images: {
-  //   loader: 'akamai',
-  //   path: '',
-  // },
+  assetPrefix: '/odin-shopping-cart',
 };
 
 module.exports = nextConfig;
